@@ -1,0 +1,6 @@
+/home/azizk/tpDevops/doctorapp/src/main/java/com/doctor/util/DatabaseConnection.java
+/home/azizk/tpDevops/doctorapp/src/main/java/com/doctor/servlet/DeleteMedecinServlet.java
+/home/azizk/tpDevops/doctorapp/src/main/java/com/doctor/dao/MedecinDAO.java
+/home/azizk/tpDevops/doctorapp/src/main/java/com/doctor/model/Medecin.java
+/home/azizk/tpDevops/doctorapp/src/main/java/com/doctor/servlet/ListMedecinServlet.java
+/home/azizk/tpDevops/doctorapp/src/main/java/com/doctor/servlet/AddMedecinServlet.java

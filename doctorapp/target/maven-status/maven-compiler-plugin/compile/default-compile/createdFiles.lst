@@ -1,0 +1,6 @@
+com/doctor/servlet/AddMedecinServlet.class
+com/doctor/model/Medecin.class
+com/doctor/dao/MedecinDAO.class
+com/doctor/servlet/DeleteMedecinServlet.class
+com/doctor/util/DatabaseConnection.class
+com/doctor/servlet/ListMedecinServlet.class

@@ -1,0 +1,47 @@
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: hopital_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./doctorapp/src/main/resources/create-table.sql:/docker-entrypoint-initdb.d/create-table.sql 
+    networks:
+      - app_network
+
+  tomcat:
+    image: tomcat:9.0
+    container_name: tomcat
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./doctorapp/target/doctor-app.war:/usr/local/tomcat/webapps/doctor-app.war
+    depends_on:
+      - mysql
+    networks:
+      - app_network
+
+  registry:
+    image: registry:2
+    container_name: myregistry
+    ports:
+      - "7003:5000"
+    volumes:
+      - registry_data:/var/lib/registry
+    networks:
+      - app_network
+
+volumes:
+  mysql_data:
+  registry_data:
+
+networks:
+  app_network:
+    driver: bridge
